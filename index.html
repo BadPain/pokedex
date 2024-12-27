@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokedex</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="./img/icons/logo.png" />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="./styles/responsive.css" />
+    <link rel="stylesheet" href="./styles/pokeview.css" />
+    <link rel="stylesheet" href="./styles/pokebackground.css" />
+    <link rel="stylesheet" href="./styles/overlay.css" />
+    <!-- <link rel="stylesheet" href="./styles/pokedex-responsive.css"> -->
+
+    <!-- Scripts -->
+    <script src="./scripts/pokeScrips.js"></script>
+    <script src="./scripts/templates.js"></script>
+    <script src="./scripts/overlay.js"></script>
+  </head>
+  <header>
+    <div class="searchClass">
+      <img src="./img/icons/logo.png" alt="" />
+      <p>Pokedex</p>
+    </div>
+    <input
+      class="searchInput"
+      type="text"
+      min="3"
+      id="searchInput"
+      placeholder="Search for a Pokemon"
+      oninput="searchPokemons()"
+    />
+  </header>
+
+  <body onload="init(), grey_background(), closeOverlay()">
+    <div id="overlay_id" class="overlay"></div>
+    <div id="content" class="contentClass"></div>
+    <div class="loadMoreClass">
+      <button class="loadMore" onclick="increasePokemons()">
+        Loading more Pokemons, NOW!
+      </button>
+    </div>
+  </body>
+</html>

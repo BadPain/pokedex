@@ -1,0 +1,79 @@
+/* pictures overlay */
+
+.d_none {
+  display: none;
+}
+
+.d_block {
+  display: block;
+}
+
+.d_transparent {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 3;
+}
+
+.overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+  width: 300px;
+  position: fixed;
+  display: none;
+  z-index: 4;
+}
+
+#overlay_id {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 25px;
+  padding-top: 25px;
+  background-color: #05171e;
+}
+
+.overlay_new {
+  width: 250px;
+  height: auto;
+  aspect-ratio: 1/1;
+  object-fit: contain;
+}
+
+.overlay_order {
+  display: flex;
+  flex-direction: column;
+}
+
+.button_order {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.button_style {
+  display: inline-block;
+  outline: 0;
+  text-align: center;
+  cursor: pointer;
+  padding: 10px 10px;
+  border: 0;
+  color: #fff;
+  font-size: 17.5px;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  border-color: #000;
+  color: #000;
+  background: transparent;
+  font-weight: 800;
+  line-height: 30px;
+  transition: color 0.1s ease-in-out;
+  background-color: rgb(141, 24, 24);
+}
+
+.button_style:hover {
+  background-color: #f27f7f;
+  color: #8c8181;
+}
