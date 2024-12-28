@@ -15,3 +15,29 @@ function createPokemonHTML(pokemon) {
     </div>
     `;
 }
+
+function getOpenOverlayTemplate({imageUrl, name, typesHtml, primaryTypeClass, stats}) {
+    return `
+<div class="overlay_order ${primaryTypeClass}">
+  <div class="overlay_new">
+    <div class="pokemon_overlay ${primaryTypeClass}">
+      <div class="pokemonName_overlay">${name}</div>
+      <div class="pokemonSorting_overlay">
+        <img class="pokemonImage_overlay" src="${imageUrl}" alt="${name} sprite">
+        <div class="pokemonPTag_overlay">
+          ${typesHtml}
+        </div>
+      </div>
+      <div class="pokemonStats_overlay">
+        ${stats}
+      </div>
+    </div>
+  </div>
+  <div class="button_order btn-group" role="group" aria-label="Basic example">
+    <button type="button" class="btn btn-primary" onclick="back_pokemon()">Preview</button>
+    <button type="button" class="btn btn-primary" onclick="closeOverlay()">X</button>
+    <button type="button" class="btn btn-primary" onclick="go_pokemon()">Next</button>
+  </div>
+</div>
+    `;
+}

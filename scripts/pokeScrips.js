@@ -9,9 +9,18 @@ function init() {
 }
 
 function increasePokemons() {
+    const loadMoreButton = document.querySelector('.loadMore');
+    const loadingContainer = document.querySelector('#loadingContainer'); 
+    loadMoreButton.disabled = true;
+    loadingContainer.style.display = "block";
     offset += limit;
     BASE_URL = `https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`;
-    getPokemons();
+    setTimeout(() => {
+        getPokemons().finally(() => {
+            loadMoreButton.disabled = false;
+            loadingContainer.style.display = "none";
+        });
+    }, 2000);
 }
 
 async function getPokemons() {

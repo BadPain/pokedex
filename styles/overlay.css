@@ -1,5 +1,3 @@
-/* pictures overlay */
-
 .d_none {
   display: none;
 }
@@ -13,15 +11,15 @@
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 3;
+  overflow: hidden;
 }
 
 .overlay {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 500px;
-  width: 300px;
+  height: 100%;
+  width: 100%;
   position: fixed;
+  top: 0;
+  left: 0;
   display: none;
   z-index: 4;
 }
@@ -32,19 +30,7 @@
   align-items: center;
   padding-bottom: 25px;
   padding-top: 25px;
-  background-color: #05171e;
-}
-
-.overlay_new {
-  width: 250px;
-  height: auto;
-  aspect-ratio: 1/1;
-  object-fit: contain;
-}
-
-.overlay_order {
-  display: flex;
-  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.307);
 }
 
 .button_order {
@@ -76,4 +62,66 @@
 .button_style:hover {
   background-color: #f27f7f;
   color: #8c8181;
+}
+
+.overlay_new {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 1/1;
+  object-fit: contain;
+}
+
+.overlay_order {
+  height: 400px;
+  width: 400px;
+}
+
+.pokemon_overlay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 200px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.pokemonName_overlay {
+  color: #fff;
+  font-size: 45px;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.pokemonSorting_overlay {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-transform: capitalize;
+}
+
+.pokemonImage_overlay {
+  width: 100px;
+  height: 100px;
+}
+
+.pokemonPTag_overlay {
+  gap: 50px;
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.pokemonStats_overlay {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: center;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 800;
+  text-transform: capitalize;
 }

@@ -1,4 +1,5 @@
 * {
+  font-family: Karla, sans-serif;
   box-sizing: border-box;
   margin: 0;
   scroll-behavior: smooth;
@@ -10,13 +11,22 @@ a {
   text-decoration: none;
 }
 
+.max-width {
+  max-width: 1440px;
+  margin: auto;
+}
+
 header {
+  gap: 15px;
+  padding: 20px;
+  background-color: #1a8b1f;
+}
+
+.headerSorting {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 15px;
-  padding: 20px;
-  background-color: #1a8b1f;
 }
 
 header img {
@@ -74,4 +84,27 @@ header p {
 
 .d-show {
   display: block;
+}
+
+button.loadMore:disabled {
+  background-color: gray;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+#loadingGif {
+  margin-top: 10px;
+}
+
+#loadingContainer {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
+
+#loadingGif {
+  width: 200px;
+  height: 200px;
 }

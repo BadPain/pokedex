@@ -1,48 +1,48 @@
 <!DOCTYPE html>
 <html lang="de">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pokedex</title>
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="./img/icons/logo.png" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pokedex</title>
 
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="./styles/style.css" />
-    <link rel="stylesheet" href="./styles/responsive.css" />
-    <link rel="stylesheet" href="./styles/pokeview.css" />
-    <link rel="stylesheet" href="./styles/pokebackground.css" />
-    <link rel="stylesheet" href="./styles/overlay.css" />
-    <!-- <link rel="stylesheet" href="./styles/pokedex-responsive.css"> -->
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="./img/icons/logo.png" />
 
-    <!-- Scripts -->
-    <script src="./scripts/pokeScrips.js"></script>
-    <script src="./scripts/templates.js"></script>
-    <script src="./scripts/overlay.js"></script>
-  </head>
-  <header>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="./styles/style.css" />
+  <link rel="stylesheet" href="./styles/responsive.css" />
+  <link rel="stylesheet" href="./styles/pokeview.css" />
+  <link rel="stylesheet" href="./styles/pokebackground.css" />
+  <link rel="stylesheet" href="./styles/overlay.css" />
+
+  <!-- Scripts -->
+  <script src="./scripts/pokeScrips.js"></script>
+  <script src="./scripts/templates.js"></script>
+  <script src="./scripts/overlay.js"></script>
+</head>
+<header>
+  <div class="max-width headerSorting">
     <div class="searchClass">
       <img src="./img/icons/logo.png" alt="" />
       <p>Pokedex</p>
     </div>
-    <input
-      class="searchInput"
-      type="text"
-      min="3"
-      id="searchInput"
-      placeholder="Search for a Pokemon"
-      oninput="searchPokemons()"
-    />
-  </header>
+    <input class="searchInput" type="text" min="3" id="searchInput" placeholder="Search" oninput="searchPokemons()" />
+  </div>
+</header>
 
-  <body onload="init(), grey_background(), closeOverlay()">
+<body id="body" onload="init(), grey_background(), closeOverlay()">
+  <div class="max-width">
     <div id="overlay_id" class="overlay"></div>
     <div id="content" class="contentClass"></div>
-    <div class="loadMoreClass">
-      <button class="loadMore" onclick="increasePokemons()">
-        Loading more Pokemons, NOW!
-      </button>
+    <div id="loadingContainer" style="display: none;">
+      <img id="loadingGif" src="./img/main/loadingscreen.gif" alt="Loading...">
     </div>
-  </body>
+    <button class="loadMore max-width" onclick="increasePokemons()">Loading more Pokemons, NOW!</button>
+  </div>
+</body>
+
 </html>
