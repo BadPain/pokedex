@@ -11,24 +11,20 @@ function changePokemon(step) {
 
 function updateOverlayImage() {
   const pokemon = pokemons[currentIndex];
-  const imageUrl = pokemon?.sprites?.front_default || "path/to/default/image.png";
-  const name = pokemon?.name || "Unknown Pokémon";
-  const typesHtml = pokemon.types.map((typeInfo) => `<p>${typeInfo.type?.name || "Unknown Type"}</p>`).join("");
-  const statsHtml = pokemon.stats.map((statInfo) => `<p>${statInfo.stat?.name}: ${statInfo.base_stat}</p>`).join("");
-
-  document.querySelector('.pokemonName_overlay').textContent = name;
+  const data = getDataSortingTemplate(pokemon);
+  document.querySelector('.pokemonName_overlay').textContent = data.name;
   const imageElement = document.querySelector('.pokemonImage_overlay');
   if (imageElement) {
-      imageElement.src = imageUrl;
-      imageElement.alt = `${name} sprite`;
+      imageElement.src = data.imageUrl;
+      imageElement.alt = `${data.name} sprite`;
   }
   const typesElement = document.querySelector('.pokemonPTag_overlay');
   if (typesElement) {
-      typesElement.innerHTML = typesHtml;
+      typesElement.innerHTML = data.typesHtml;
   }
   const statsElement = document.querySelector('.pokemonStats_overlay');
   if (statsElement) {
-      statsElement.innerHTML = statsHtml;
+      statsElement.innerHTML = data.statsHtml;
   }
 }
 

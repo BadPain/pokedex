@@ -1,9 +1,9 @@
 function createPokemonHTML(pokemon) {
-    const imageUrl = pokemon?.sprites?.front_default || 'path/to/default/image.png';
-    const name = pokemon?.name || 'Unknown Pokémon';
-    const typesHtml = pokemon.types.map(typeInfo => `<p>${typeInfo.type?.name || 'Unknown Type'}</p>`).join('');
-    const primaryTypeClass = pokemon.types[0]?.type?.name || 'unknown';
-    return `
+  const imageUrl = pokemon?.sprites?.front_default || 'path/to/default/image.png';
+  const name = pokemon?.name || 'Unknown Pokémon';
+  const typesHtml = pokemon.types.map(typeInfo => `<p>${typeInfo.type?.name || 'Unknown Type'}</p>`).join('');
+  const primaryTypeClass = pokemon.types[0]?.type?.name || 'unknown';
+  return `
     <div onclick="openOverlay(${pokemon.id})">
         <div class="pokemon ${primaryTypeClass}">
             <div class="pokemonName">${name}</div>
@@ -16,8 +16,8 @@ function createPokemonHTML(pokemon) {
     `;
 }
 
-function getOpenOverlayTemplate({imageUrl, name, typesHtml, primaryTypeClass, stats}) {
-    return `
+function getOpenOverlayTemplate({ imageUrl, name, typesHtml, primaryTypeClass, stats }) {
+  return `
 <div class="overlay_order ${primaryTypeClass}">
   <div class="overlay_new">
     <div class="pokemon_overlay ${primaryTypeClass}">
@@ -40,4 +40,18 @@ function getOpenOverlayTemplate({imageUrl, name, typesHtml, primaryTypeClass, st
   </div>
 </div>
     `;
+}
+
+function getDataSortingTemplate(pokemon) {
+  const imageUrl = pokemon?.sprites?.front_default || "path/to/default/image.png";
+  const name = pokemon?.name || "Unknown Pokémon";
+  const typesHtml = pokemon.types.map((typeInfo) => `<p>${typeInfo.type?.name || "Unknown Type"}</p>`).join("");
+  const statsHtml = pokemon.stats.map((statInfo) => `<p>${statInfo.stat?.name}: ${statInfo.base_stat}</p>`).join("");
+
+  return {
+    imageUrl,
+    name,
+    typesHtml,
+    statsHtml
+  };
 }
